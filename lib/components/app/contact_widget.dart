@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'dart:html' as html;
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -19,12 +19,8 @@ class ContactWidget extends StatelessWidget {
           IconButton(
             onPressed: () async {
               var repo = "https://www.twitter.com/tobacodes";
-              if (kIsWeb) {
-                html.window.open(repo, '');
-              } else {
-                if (await canLaunch(repo)) {
-                  launch(repo);
-                }
+              if (await canLaunch(repo)) {
+                launch(repo);
               }
             },
             icon: SvgPicture.asset(
@@ -40,16 +36,29 @@ class ContactWidget extends StatelessWidget {
           IconButton(
             onPressed: () async {
               var repo = "https://www.github.com/adtoba";
-              if (kIsWeb) {
-                html.window.open(repo, '');
-              } else {
-                if (await canLaunch(repo)) {
-                  launch(repo);
-                }
+              if (await canLaunch(repo)) {
+                launch(repo);
               }
             },
             icon: SvgPicture.asset(
               'assets/icons/github.svg',
+              height: Config.yMargin(context, 2),
+              width: Config.xMargin(context, 2),
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            width: Config.xMargin(context, 1.5),
+          ),
+          IconButton(
+            onPressed: () async {
+              var repo = "https://wa.me/+2348179477272";
+              if (await canLaunch(repo)) {
+                launch(repo);
+              }
+            },
+            icon: SvgPicture.asset(
+              'assets/icons/whatsapp.svg',
               height: Config.yMargin(context, 2),
               width: Config.xMargin(context, 2),
               color: Colors.white,

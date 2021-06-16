@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/components/buttons/something_special_button.dart';
 import 'package:portfolio/style/colors.dart';
 import 'package:portfolio/utils/config.dart';
 
@@ -38,19 +39,14 @@ class AboutPage extends StatelessWidget {
           height: Config.yMargin(context, 2),
         ),
         Text(
-          'I’m a Front-End Developer located in Poland. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.\n\nWell-organised person, problem solver, independent employee with high attention to detail. Fan of MMA, outdoor activities, TV series and English literature. A family person and father of two fractious boys,\n\nInterested in the entire frontend spectrum and working on ambitious projects with positive people.',
+          'I’m a Mobile Developer. I have a serious passion for mobile development, animations and creating intuitive, dynamic user experiences.\n\nWell-organised person, problem solver, Currently working with Tellerpay, high attention to detail. Fan of Movies, Learning new stuffs and playing video games 👀.\n\nInterested in working on ambitious projects with positive people.',
           style: TextStyle(
               fontSize: Config.xMargin(context, 3), color: AppColors.white),
         ),
         SizedBox(
           height: Config.yMargin(context, 2),
         ),
-        Text(
-          'Lets make something special',
-          style: TextStyle(
-              fontSize: Config.xMargin(context, 3),
-              color: AppColors.lightGreen),
-        ),
+        SelectSpecialButton(),
         SizedBox(
           height: Config.yMargin(context, 6),
         ),

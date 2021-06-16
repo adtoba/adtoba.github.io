@@ -3,9 +3,11 @@ import 'package:portfolio/style/colors.dart';
 import 'package:portfolio/utils/config.dart';
 
 class ContactButton extends StatefulWidget {
-  ContactButton({this.text = 'Contact Me !'});
+  ContactButton({this.text = 'Contact Me !', this.onPressed});
 
   final String text;
+  final Function onPressed;
+
   @override
   _ContactButtonState createState() => _ContactButtonState();
 }
@@ -42,25 +44,28 @@ class _ContactButtonState extends State<ContactButton>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: MouseRegion(
-        onEnter: (event) {
-          controller.forward();
-        },
-        onExit: (event) {
-          controller.reverse();
-        },
-        child: SizedBox(
-          height: Config.yMargin(context, 5),
-          width: Config.xMargin(context, 30),
-          child: CustomPaint(
-            painter: ButtonPainter(progress: animation.value),
-            child: Center(
-                child: Text(
-              widget.text,
-              style: TextStyle(
-                  color: color, fontFamily: 'Coolvetica', letterSpacing: 3),
-            )),
+    return InkWell(
+      onTap: widget.onPressed,
+      child: Container(
+        child: MouseRegion(
+          onEnter: (event) {
+            controller.forward();
+          },
+          onExit: (event) {
+            controller.reverse();
+          },
+          child: SizedBox(
+            height: Config.yMargin(context, 5),
+            width: Config.xMargin(context, 30),
+            child: CustomPaint(
+              painter: ButtonPainter(progress: animation.value),
+              child: Center(
+                  child: Text(
+                widget.text,
+                style: TextStyle(
+                    color: color, fontFamily: 'Coolvetica', letterSpacing: 3),
+              )),
+            ),
           ),
         ),
       ),

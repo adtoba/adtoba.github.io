@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/components/buttons/something_special_button.dart';
 import 'package:portfolio/components/indicators/skill_progress_painter.dart';
 import 'package:portfolio/style/colors.dart';
 import 'package:portfolio/utils/config.dart';
@@ -63,12 +64,7 @@ class SkillsPage extends StatelessWidget {
         SizedBox(
           height: Config.yMargin(context, 2),
         ),
-        Text(
-          'Lets make something special',
-          style: TextStyle(
-              fontSize: Config.xMargin(context, 2.2),
-              color: AppColors.lightGreen),
-        ),
+        SelectSpecialButton(),
         SizedBox(
           height: Config.yMargin(context, 6),
         ),

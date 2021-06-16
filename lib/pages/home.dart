@@ -1,9 +1,14 @@
+// ignore: avoid_web_libraries_in_flutter
+// import 'dart:html' as html;
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/buttons/contact_button.dart';
 import 'package:portfolio/pages/my_portfolio.dart';
 import 'package:portfolio/style/colors.dart';
 import 'package:portfolio/utils/config.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -99,7 +104,13 @@ class _HomeState extends State<Home> {
                       SizedBox(
                         height: Config.yMargin(context, 6),
                       ),
-                      ContactButton()
+                      ContactButton(onPressed: () async {
+                        var repo = "mailto:adetoba53@gmail.com";
+
+                        if (await canLaunch(repo)) {
+                          launch(repo);
+                        }
+                      })
                     ],
                   ),
                 )),

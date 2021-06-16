@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/app/ballon_generator.dart';
+import 'package:portfolio/components/app/contact_widget.dart';
 import 'package:portfolio/components/app/navigation_bar.dart';
 import 'package:portfolio/pages/about_page.dart';
 import 'package:portfolio/pages/contact_page.dart';
@@ -75,6 +76,10 @@ class _HomePageState extends State<HomePage> {
                   onPageChanged(4);
                 },
               ),
+              SizedBox(
+                height: Config.yMargin(context, 5),
+              ),
+              ContactWidget()
             ],
           ),
         ),
@@ -97,20 +102,6 @@ class _HomePageState extends State<HomePage> {
             ),
       body: Stack(
         children: [
-          // BalloonGenerator(
-          //   width: 80,
-          //   count: 50,
-          //   colors: [
-          //     Colors.redAccent,
-          //     Colors.blueAccent,
-          //     Colors.greenAccent,
-          //     Colors.pinkAccent,
-          //     Colors.yellowAccent,
-          //     Colors.tealAccent,
-          //     Colors.orangeAccent,
-          //     Colors.purpleAccent,
-          //   ],
-          // ),
           Container(
             child: width > 750
                 ? Row(
@@ -166,11 +157,19 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onPageChanged(int index) {
-    _pageController.animateToPage(index,
-        duration: Duration(milliseconds: 600), curve: Curves.decelerate);
-    setState(() {
-      currentIndex = index;
-    });
+    double width = MediaQuery.of(context).size.width;
+    if (width > 750) {
+      _pageController.animateToPage(index,
+          duration: Duration(milliseconds: 500), curve: Curves.decelerate);
+      setState(() {
+        currentIndex = index;
+      });
+    } else {
+      _pageController.jumpToPage(index);
+      setState(() {
+        currentIndex = index;
+      });
+    }
   }
 }
 

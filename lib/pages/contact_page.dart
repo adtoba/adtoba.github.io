@@ -1,9 +1,12 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/components/buttons/contact_button.dart';
 import 'package:portfolio/components/inputs/textfield.dart';
 import 'package:portfolio/style/colors.dart';
 import 'package:portfolio/utils/config.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactsPage extends StatefulWidget {
   @override
@@ -75,18 +78,11 @@ class _ContactsPageState extends State<ContactsPage> {
                       ),
                       Expanded(
                         child: PTextField(
-                          controller: emailController,
-                          hint: 'Email',
+                          controller: subjectController,
+                          hint: 'Subject',
                         ),
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    height: Config.yMargin(context, 3),
-                  ),
-                  PTextField(
-                    controller: subjectController,
-                    hint: 'Subject',
                   ),
                   SizedBox(
                     height: Config.yMargin(context, 3),
@@ -102,8 +98,7 @@ class _ContactsPageState extends State<ContactsPage> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: ContactButton(
-                      text: 'Send Message !',
-                    ),
+                        text: 'Send Message !', onPressed: () => sendMail()),
                   )
                 ],
               )
@@ -117,13 +112,6 @@ class _ContactsPageState extends State<ContactsPage> {
                     height: Config.yMargin(context, 3),
                   ),
                   PTextField(
-                    controller: emailController,
-                    hint: 'Email',
-                  ),
-                  SizedBox(
-                    height: Config.yMargin(context, 3),
-                  ),
-                  PTextField(
                     controller: subjectController,
                     hint: 'Subject',
                   ),
@@ -142,6 +130,7 @@ class _ContactsPageState extends State<ContactsPage> {
                     alignment: Alignment.centerRight,
                     child: ContactButton(
                       text: 'Send Message !',
+                      onPressed: () => sendMail(),
                     ),
                   )
                 ],
@@ -186,6 +175,15 @@ class _ContactsPageState extends State<ContactsPage> {
           ),
         ),
       );
+    }
+  }
+
+  void sendMail() async {
+    var repo =
+        "mailto:adetoba53@gmail.com?subject=${subjectController.text}&body=${messageController.text}";
+
+    if (await canLaunch(repo)) {
+      launch(repo);
     }
   }
 }
