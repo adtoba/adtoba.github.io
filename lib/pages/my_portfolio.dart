@@ -1,12 +1,14 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/components/buttons/contact_button.dart';
 import 'package:portfolio/components/buttons/something_special_button.dart';
 import 'package:portfolio/components/widgets/projects.dart';
 import 'package:portfolio/style/colors.dart';
 import 'package:portfolio/utils/config.dart';
 
 class PortfolioPage extends StatelessWidget {
+  PortfolioPage({this.onPageChanged});
+
+  final Function(int) onPageChanged;
   final colors = [
     Colors.redAccent,
     Colors.blueAccent,
@@ -19,11 +21,11 @@ class PortfolioPage extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
     return Container(
         alignment: Alignment.topLeft,
         padding: EdgeInsets.all(30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,13 +60,15 @@ class PortfolioPage extends StatelessWidget {
                 SizedBox(
                   height: Config.yMargin(context, 6),
                 ),
-                ContactButton(
-                  text: 'See more !',
-                  onPressed: () {},
-                )
+                // ContactButton(
+                //   text: 'See more !',
+                //   onPressed: () {
+                //     onPageChanged(3);
+                //   },
+                // )
               ],
             ),
-            SizedBox(height: Config.yMargin(context, 5)),
+            SizedBox(height: Config.yMargin(context, 4)),
             Expanded(child: ProjectsList())
           ],
         ));

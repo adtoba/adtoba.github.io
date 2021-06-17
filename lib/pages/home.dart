@@ -1,6 +1,5 @@
 // ignore: avoid_web_libraries_in_flutter
 // import 'dart:html' as html;
-import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +10,9 @@ import 'package:portfolio/utils/config.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
+  Home({this.onPageChanged});
+
+  final Function(int) onPageChanged;
   @override
   _HomeState createState() => _HomeState();
 }
@@ -164,7 +166,7 @@ class _HomeState extends State<Home> {
             )
           ],
         ),
-        PortfolioPage()
+        PortfolioPage(onPageChanged: widget.onPageChanged)
       ],
     );
   }

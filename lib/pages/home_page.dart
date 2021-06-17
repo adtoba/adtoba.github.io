@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/components/app/ballon_generator.dart';
 import 'package:portfolio/components/app/contact_widget.dart';
 import 'package:portfolio/components/app/navigation_bar.dart';
 import 'package:portfolio/pages/about_page.dart';
 import 'package:portfolio/pages/contact_page.dart';
 import 'package:portfolio/pages/home.dart';
-import 'package:portfolio/pages/projects.dart';
 import 'package:portfolio/pages/skills_page.dart';
 import 'package:portfolio/pages/work_page.dart';
 import 'package:portfolio/style/colors.dart';
@@ -141,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                         physics: NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.vertical,
                         children: [
-                          Home(),
+                          Home(onPageChanged: onPageChanged),
                           AboutPage(),
                           SkillsPage(),
                           WorkPage(),
@@ -157,19 +155,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onPageChanged(int index) {
-    double width = MediaQuery.of(context).size.width;
-    if (width > 750) {
-      _pageController.animateToPage(index,
-          duration: Duration(milliseconds: 500), curve: Curves.decelerate);
-      setState(() {
-        currentIndex = index;
-      });
-    } else {
-      _pageController.jumpToPage(index);
-      setState(() {
-        currentIndex = index;
-      });
-    }
+    // if (width > 750 && (isNotHome == null || isNotHome == false)) {
+    //   _pageController.animateToPage(index,
+    //       duration: Duration(milliseconds: 500), curve: Curves.decelerate);
+    //   setState(() {
+    //     currentIndex = index;
+    //   });
+    // } else {
+    _pageController.jumpToPage(index);
+    setState(() {
+      currentIndex = index;
+    });
+    // }
   }
 }
 

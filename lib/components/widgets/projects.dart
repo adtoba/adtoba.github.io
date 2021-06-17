@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/utils/config.dart';
 import 'package:portfolio/values/my_projects.dart';
 import 'package:url_launcher/url_launcher.dart';
