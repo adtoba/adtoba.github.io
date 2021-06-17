@@ -23,7 +23,8 @@ class SelectSpecialButton extends StatelessWidget {
       child: Text(
         'Lets make something special',
         style: TextStyle(
-            fontSize: Config.xMargin(context, 3), color: AppColors.lightGreen),
+            fontSize: Config.xMargin(context, 2.3),
+            color: AppColors.lightGreen),
       ),
     );
   }

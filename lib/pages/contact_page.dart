@@ -57,7 +57,7 @@ class _ContactsPageState extends State<ContactsPage> {
           "I\'m interested and open to freelance opportunities and gigs. "
           "However, if you have other request or question, don\'t hesistate to use the form.",
           style: TextStyle(
-              fontSize: Config.xMargin(context, 3), color: AppColors.white),
+              fontSize: Config.xMargin(context, 2.3), color: AppColors.white),
         ),
         SizedBox(
           height: Config.yMargin(context, 6),

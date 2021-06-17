@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/components/widgets/projects.dart';
 import 'package:portfolio/utils/config.dart';
 
 class WorkPage extends StatefulWidget {
@@ -12,18 +13,7 @@ class _WorkPageState extends State<WorkPage> {
     final width = MediaQuery.of(context).size.width;
 
     return Container(
-      child: GridView.builder(
-          shrinkWrap: true,
-          itemCount: 9,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: width > 750 ? 4 : 2,
-              mainAxisSpacing: Config.yMargin(context, 2),
-              crossAxisSpacing: Config.yMargin(context, 2)),
-          itemBuilder: (context, index) {
-            return Container(
-              color: Colors.green,
-            );
-          }),
-    );
+        padding: EdgeInsets.all(20),
+        child: SingleChildScrollView(child: ProjectsList()));
   }
 }

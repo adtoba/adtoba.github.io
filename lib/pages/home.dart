@@ -98,7 +98,7 @@ class _HomeState extends State<Home> {
                       Text(
                         'Mobile developer / Intermediate Flutter developer',
                         style: TextStyle(
-                            fontSize: Config.xMargin(context, 3),
+                            fontSize: Config.xMargin(context, 2.3),
                             color: AppColors.darkGreyText),
                       ),
                       SizedBox(

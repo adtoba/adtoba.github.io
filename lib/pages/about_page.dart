@@ -41,7 +41,7 @@ class AboutPage extends StatelessWidget {
         Text(
           'I’m a Mobile Developer. I have a serious passion for mobile development, animations and creating intuitive, dynamic user experiences.\n\nWell-organised person, problem solver, Currently working with Tellerpay, high attention to detail. Fan of Movies, Learning new stuffs and playing video games 👀.\n\nInterested in working on ambitious projects with positive people.',
           style: TextStyle(
-              fontSize: Config.xMargin(context, 3), color: AppColors.white),
+              fontSize: Config.xMargin(context, 2.3), color: AppColors.white),
         ),
         SizedBox(
           height: Config.yMargin(context, 2),

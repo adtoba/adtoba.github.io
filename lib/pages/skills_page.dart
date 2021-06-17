@@ -59,7 +59,7 @@ class SkillsPage extends StatelessWidget {
           "Flutter, animations and coding interactive layouts.\n\n"
           "I also have experience working with node.js and springboot for backend development.",
           style: TextStyle(
-              fontSize: Config.xMargin(context, 3), color: AppColors.white),
+              fontSize: Config.xMargin(context, 2.3), color: AppColors.white),
         ),
         SizedBox(
           height: Config.yMargin(context, 2),
