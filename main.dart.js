@@ -64721,7 +64721,7 @@ $R:0,
 $S:27}
 F.Fc.prototype={
 K:function(a,b){var s=null
-return new S.vm(new X.uK(s),"Flutter Demo",X.adD(s,s,C.W,"Calibri",C.lj,$.alQ()),s)}}
+return new S.vm(new X.uK(s),"Adebisi Adetoba",X.adD(s,s,C.W,"Calibri",C.lj,$.alQ()),s)}}
 K.Fd.prototype={
 jU:function(){var s=new H.d7(t.cj)
 s.n(0,"title",this.a)
