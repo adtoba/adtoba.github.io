@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
   Home({this.onPageChanged});
 
   final Function(int) onPageChanged;
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -57,38 +58,39 @@ class _HomeState extends State<Home> {
           children: [
             Container(
                 alignment: Alignment.centerLeft,
-                padding: EdgeInsets.all(60),
+                padding: EdgeInsets.all(50),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text(
-                        'Hi,',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: Config.xMargin(context, 11),
-                            fontFamily: 'Coolvetica',
-                            letterSpacing: 2,
-                            color: Colors.white),
-                      ),
+                      AnimatedTextKit(repeatForever: true, animatedTexts: [
+                        WavyAnimatedText('Hi,',
+                            textAlign: TextAlign.start,
+                            textStyle: TextStyle(
+                                fontSize: Config.xMargin(context, 9),
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Coolvetica',
+                                letterSpacing: 2,
+                                color: Colors.white))
+                      ]),
                       AnimatedTextKit(
-                        repeatForever: true,
                         animatedTexts: [
-                          ColorizeAnimatedText('I\'m Adetoba, ',
-                              colors: colors,
+                          WavyAnimatedText('I\'m Adetoba, ',
+                              textAlign: TextAlign.start,
                               textStyle: TextStyle(
-                                  fontSize: Config.xMargin(context, 11),
+                                  fontSize: Config.xMargin(context, 9),
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Coolvetica',
                                   letterSpacing: 2,
-                                  color: Colors.white)),
+                                  color: Colors.purpleAccent)),
                         ],
+                        repeatForever: true,
                       ),
                       Text(
                         'Software developer',
                         style: TextStyle(
-                            fontSize: Config.xMargin(context, 11),
+                            fontSize: Config.xMargin(context, 9),
                             fontWeight: FontWeight.bold,
                             letterSpacing: 2,
                             fontFamily: 'Coolvetica',

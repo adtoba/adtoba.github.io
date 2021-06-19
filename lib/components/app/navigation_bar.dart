@@ -27,7 +27,13 @@ class NavigationBar extends StatelessWidget {
               vertical: Config.yMargin(context, 4),
             ),
             alignment: Alignment.center,
-            child: NameLogo(),
+            child: Text(
+              'A',
+              style: TextStyle(
+                color: Colors.purpleAccent,
+                fontSize: Config.xMargin(context, 10)
+              ),
+            ),
           ),
           PText(
             text: '',

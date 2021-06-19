@@ -14,7 +14,7 @@ class ProjectsList extends StatelessWidget {
         itemCount: myProjects.length,
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: width > 750 ? 3 : 1,
+            crossAxisCount: width > 750 ? 3 : 2,
             crossAxisSpacing: Config.xMargin(context, 3),
             mainAxisSpacing: Config.yMargin(context, 3),
             childAspectRatio: 1),
